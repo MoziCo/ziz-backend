@@ -1,1 +1,5 @@
-# Core shared modules
+"""Core shared modules."""
+
+from .config import Settings, settings
+
+__all__ = ["Settings", "settings"]
