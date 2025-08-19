@@ -1,32 +1,56 @@
-# Byte-compiled / optimized
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Data files
-data/
-
-# Virtual environments
-.env
-.venv
-env/
-venv/
-
-# Poetry
-.poetry/
-
-# VS Code
-.vscode/
-
-# macOS
-.DS_Store
-
-# Logs and coverage
+# Logs
+logs
 *.log
-.coverage
-htmlcov/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Distribution folders
-dist/
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+env/
+ENV/
+
+# Envs
+.env
+.env.local
+
+# local data:
+data/

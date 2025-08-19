@@ -17,5 +17,8 @@
     "mounts": [
       "source=${localEnv:HOME},target=/home/${localEnv:USER},type=bind,consistency=cached"
     ],
-    "remoteUser": "${localEnv:USER}"
+    "runArgs": [
+      "--network","host"
+    ],
+    "remoteUser": "${localEnv:USER}",
   }

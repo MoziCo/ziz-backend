@@ -1,12 +1,13 @@
 repos:
-  # ────────────────────────────────────────────────────────────────────────────
-  # 1) Lint & format all Python with Ruff
+  # Ruff linter and formatter
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.9      # latest stable as of May 2025
+    rev: v0.12.8
     hooks:
-      - id: ruff          # lints & auto-fixes (PEP8, import sorting, pyupgrade…)
-        args: [--fix]
-      - id: ruff-format   # Black-compatible formatter
+      - id: ruff
+        name: ruff check
+        args: ["--fix"]
+      - id: ruff-format
+        name: ruff format
 
   # ────────────────────────────────────────────────────────────────────────────
   # 2) Non-Python checks (pre-commit-hooks)

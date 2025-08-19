@@ -1,0 +1,9 @@
+  {
+    "python.testing.pytestEnabled": true,
+    "extensions.ignoreRecommendations": true,
+    "python.testing.pytestArgs": [
+        "-s"
+    ],
+    "python.poetryPath": "poetry",
+    "markdown-mermaid.darkModeTheme":"dark"
+}
