@@ -1,0 +1,45 @@
+repos:
+  # ────────────────────────────────────────────────────────────────────────────
+  # 1) Lint & format all Python with Ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.9      # latest stable as of May 2025
+    hooks:
+      - id: ruff          # lints & auto-fixes (PEP8, import sorting, pyupgrade…)
+        args: [--fix]
+      - id: ruff-format   # Black-compatible formatter
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 2) Non-Python checks (pre-commit-hooks)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: end-of-file-fixer       # ensure newline at EOF
+      - id: trailing-whitespace     # strip extra spaces/tabs
+      - id: check-yaml              # validate all .yml/.yaml files
+      - id: check-json              # validate *.json
+      - id: check-added-large-files # catch accidentally huge files
+      - id: check-merge-conflict    # refuse to commit unresolved <<<<<<< markers
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 3) Secret detection
+  # Secret detection (Gitleaks)
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 4) (Optional) Other recommended hooks
+  #    – Spell-check your docs & comments
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.0
+    hooks:
+      - id: codespell
+
+  #    – Lint Markdown (if you write a lot of .md)
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.44.0
+    hooks:
+      - id: markdownlint
+        args: [--fix]
+        files: \.(md|markdown)$

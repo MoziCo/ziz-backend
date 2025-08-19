@@ -1,0 +1,21 @@
+{
+    "name": "Basic Python",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "args": {
+        "USERNAME": "${localEnv:USER}",
+        "USER_UID": "${localEnv:UID:1000}",
+        "USER_GID": "${localEnv:UID:1000}"
+      }
+    },
+    "settings": {
+      "python.pythonPath": "/usr/local/bin/python"
+    },
+    "extensions": [
+      "ms-python.python"
+    ],
+    "mounts": [
+      "source=${localEnv:HOME},target=/home/${localEnv:USER},type=bind,consistency=cached"
+    ],
+    "remoteUser": "${localEnv:USER}"
+  }

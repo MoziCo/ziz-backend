@@ -1,0 +1,32 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data files
+data/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# Poetry
+.poetry/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs and coverage
+*.log
+.coverage
+htmlcov/
+
+# Distribution folders
+dist/
+build/
+*.egg-info/
