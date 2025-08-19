@@ -7,21 +7,21 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "app.main:app", // Adjust this to the project app
+                "app.main:app",
                 "--reload"
             ],
             "cwd": "${workspaceFolder}/backend",
             "console": "integratedTerminal",
-            "envFile": "${workspaceFolder}/backend/.env"
+            "envFile": "${workspaceFolder}/.env"
         },
         {
-            "name": "Python: Debug Tests", // Used by pytest Test Explorer to debug packages code
+            "name": "Python: Debug Tests",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": false,
             "purpose": ["debug-test"]
-          },
+          }
     ]
 }
