@@ -1,0 +1,13 @@
+  {
+    "python.testing.pytestEnabled": true,
+    "extensions.ignoreRecommendations": true,
+    "python.testing.pytestArgs": [
+        "-s", 
+        // "-n","auto", // Run tests in parallel
+        // "--dist=loadscope",// Distribute tests by scope
+        // "-m","not integration_test" // Exclude integration tests
+        "backend/"
+    ],
+    "python.poetryPath": "poetry",
+    "markdown-mermaid.darkModeTheme":"dark"
+}

@@ -1,13 +1,18 @@
 [project]
-name = "python-template"
+name = "ziz"
 version = "0.1.0"
-description = "The basic template for python projects"
+description = "Ziz Evaluation Backend"
 authors = [
     {name = "Oz Shaked",email = "oz@mozico.nl"}
 ]
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
+    "fastapi>=0.104.1",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+    "httpx>=0.25.0",
+    "python-multipart>=0.0.6",
 ]
 
 
@@ -15,7 +20,58 @@ dependencies = [
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+
+[tool.poetry]
+name = "ziz"
+version = "0.1.0"
+description = "Ziz Evaluation System - Backend"
+authors = ["Oz Shaked <oz@mozico.nl>"]
+readme = "README.md"
+packages = [{include = "ziz"}]
+
+[tool.poetry.scripts]
+ziz-api = "ziz.api.main:main"
+
+[tool.poetry.extras]
+api = ["fastapi", "uvicorn"]
+sdk = ["httpx"]
+all = ["fastapi", "uvicorn", "httpx"]
+
+
 [tool.poetry.group.dev.dependencies]
-commitizen = "^4.7.0"
-pytest = "^8.3.5"
-pre-commit = "^4.2.0"
+ruff = "^0.12.3"
+commitizen = "^4.8.3"
+pytest = "^8.4.1"
+pytest-asyncio = "^1.1.0"
+pre-commit = "^4.3.0"
+httpx = "^0.25.0"
+pytest-httpx = "^0.30.0"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+preview = true
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "UP"]
+ignore = [
+    "E501",    # Line too long (handled by formatter)
+    "E712",    # Allow explicit boolean comparisons
+    "UP006",   # Use `list` instead of `List` for type annotations
+    "UP007",   # Use `X | Y` instead of `Union[X, Y]`
+    "UP035",   # Import from `collections.abc` instead of `typing`
+    "UP042",   # Use `enum.StrEnum` instead of `str, Enum`
+    "UP045",   # Use `collections.abc` import instead of `typing`
+    "B008",    # Function calls in default arguments
+    "B904",    # Exception chaining with `raise ... from err`
+]
+
+fixable = [
+    "F401",    # Remove unused imports
+    "RUF100",  # Remove unused noqa comments
+    "I",       # Sort imports
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 72
