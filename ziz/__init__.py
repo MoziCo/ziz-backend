@@ -9,7 +9,5 @@ __version__ = "0.1.0"
 __author__ = "Oz Shaked"
 __email__ = "oz@mozico.nl"
 
-from ziz.sdk import ZizClient
-from ziz.core.config import Config
-
-__all__ = ["ZizClient", "Config"]
+# Main imports will be added as modules are implemented
+__all__ = ["__version__"]
