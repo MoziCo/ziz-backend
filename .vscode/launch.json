@@ -2,15 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Uvicorn (Poetry)",
+            "name": "Ziz API",
             "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "app.main:app",
+                "ziz.api.main:app",
                 "--reload"
             ],
-            "cwd": "${workspaceFolder}/backend",
+            "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/.env"
         },

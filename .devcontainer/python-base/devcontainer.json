@@ -20,5 +20,5 @@
     "runArgs": [
       "--network","host"
     ],
-    "remoteUser": "${localEnv:USER}",
+    "remoteUser": "${localEnv:USER}"
   }
